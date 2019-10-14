@@ -116,11 +116,11 @@ public class ClusterAnalysis
             
             tempSelisih1 += Math.abs( centroidAwal.get(i).get("x") - centroidAkhir.get(i).get("x") );
             tempSelisih1 += Math.abs( centroidAwal.get(i).get("y") - centroidAkhir.get(i).get("y") );
-            System.out.println("Selisih : " + tempSelisih1);
+            // System.out.println("Selisih : " + tempSelisih1);
             
             tempSelisih2 += Math.abs( centroidAwal.get(i).get("x") - centroidAkhir.get(i).get("y") );
             tempSelisih2 += Math.abs( centroidAwal.get(i).get("y") - centroidAkhir.get(i).get("x") );
-            System.out.println("Selisih : " + tempSelisih2);
+            // System.out.println("Selisih : " + tempSelisih2);
             
             if ( tempSelisih1 < tempSelisih2 ){
                 selisih += tempSelisih1;
@@ -129,9 +129,15 @@ public class ClusterAnalysis
             }
         }
         
+        // jumlahkan error
         selisih /= clusterAwal.size();
         
-        // jumlahkan error
-        System.out.println("ERRORRRRR : " + selisih);
+        System.out.println();
+        System.out.println("+=================================+");
+        System.out.println("|        Cluster Analysis         |");
+        System.out.println("|    Centroid Proximity Index     |");
+        System.out.println("+=================================+");
+        System.out.printf ("| ERRORRRRR : %-20f|\n", selisih);
+        System.out.println("+=================================+\n");
     }
 }

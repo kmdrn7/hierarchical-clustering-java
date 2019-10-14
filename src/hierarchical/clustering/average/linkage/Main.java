@@ -21,14 +21,14 @@ public class Main
         ArrayList<Data> akhir;
         
         Clustering clustering = new Clustering();
-//        clustering.setK();
+        clustering.setK();
         clustering.readFile(file);
         
         awal = clustering.getData();
         clustering.go();
         akhir = clustering.getData();
         
-//        clustering.print();
+        clustering.print();
         
         Visualization vis = new Visualization();
         vis.setData(clustering.getData(), clustering.getK());
