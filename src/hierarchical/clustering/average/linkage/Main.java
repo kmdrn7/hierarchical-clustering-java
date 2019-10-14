@@ -34,7 +34,7 @@ public class Main
         vis.setData(clustering.getData(), clustering.getK());
         vis.show();
        
-//        ClusterAnalysis clus = new ClusterAnalysis();
-//        clus.analyzeCPI(awal, akhir);
+        ClusterAnalysis clus = new ClusterAnalysis();
+        clus.analyzeCPI(awal, akhir);
     }    
 }

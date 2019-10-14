@@ -13,9 +13,15 @@ import java.util.HashMap;
  * @author kmdr7
  */
 public class ClusterAnalysis
-{
+{   
     public void analyzeCPI(ArrayList<Data> awal, ArrayList<Data> akhir)
     {
+        ArrayList<Integer> clusterAwal = new ArrayList();
+        ArrayList<Integer> clusterAkhir = new ArrayList();
+        ArrayList<HashMap<String, Double>> centroidAwal = new ArrayList();
+        ArrayList<HashMap<String, Double>> centroidAkhir = new ArrayList();
+        ArrayList<HashMap<String, Integer>> cluster = new ArrayList();
+        
         // distinct label
         for ( Data data : awal )
         {
@@ -116,10 +122,10 @@ public class ClusterAnalysis
             tempSelisih2 += Math.abs( centroidAwal.get(i).get("y") - centroidAkhir.get(i).get("x") );
             System.out.println("Selisih : " + tempSelisih2);
             
-            if ( tempSelisih1 > tempSelisih2 ){
+            if ( tempSelisih1 < tempSelisih2 ){
                 selisih += tempSelisih1;
             } else {
-                  selisih += tempSelisih2;
+                selisih += tempSelisih2;
             }
         }
         
